@@ -1,0 +1,20 @@
+{% extends "home.html"%}
+{% block Formulario %}
+
+    {% if estudiantes %}
+        <h3>Aca va el contenido de buscar alumnos</h3>
+        <div class="d-flex" style="margin-top:5rem; margin-left:7rem">
+            {% for estudiante in estudiantes %}
+
+            <div class="card-body">
+                <h5 class="card-title">Legajo: {{estudiante.legajo}}</h5>
+                <h5 class="card-title">Nombre: {{estudiante.nombre}}</h5>
+                <h5 class="card-title">Apellido: {{estudiante.apellido}}</h5>
+                <h5 class="card-title">Email: {{estudiante.email}}</h5>
+            </div>
+            
+            {% endfor %}
+    {% else %}
+        <h5> El estudiante no se encuentra registrado. </h5>
+    {% endif %}
+{% endblock %}

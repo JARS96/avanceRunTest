@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Proyecto Final</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="background-color: #e3f2fd;">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="/home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/crear/create_curso">Curso</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/crear/create_estudiante">Estudiante</a> 
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/crear/create_profesor">Profesor</a> 
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/admin">Admin</a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0" action = "/crear/search_alumno", method = "GET"> 
+          <input class="form-control mr-sm-2" type= "text" placeholder= "Buscar" aria-label= "search" name = 'search'>
+          <button class="btn btn-sm btn-outline-secondary" type="submit">Buscar</button>
+        </form>
+      </nav>
+      <br>
+    <div class="container-fluid">
+
+  {% block Formulario %}
+
+  <h6>Home:</h6>
+    <h7>- Menu con que contiene todas las opciones disponibles.</h7><br>
+  <br><h6>Curso:</h6>
+    <h7>- En esta seccion se crean los cursos nuevos.</h7><br>
+  <br><h6>Estudiante:</h6>
+    <h7>- En esta seccion se crean los estudiantes nuevos.</h7><br>
+  <br><h6>Profesores:</h6>
+    <h7>- En esta seccion se crean los profesores nuevos.</h7><br>
+  <br><h6>Admin:</h6>
+    <h7>- Admin de Django, en este panel se pueden agregar familiares o borrarlos de la base de datos.</h7>
+
+  {% endblock %}
+
+  </div>
+</body>
+</html>
